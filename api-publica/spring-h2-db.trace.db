@@ -1,4 +1,0 @@
-2023-10-22 20:39:45 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'Oreo' (PRODUCTOS: ""CODIGO_BARRA"" BIGINT)"
-Data conversion error converting "'Oreo' (PRODUCTOS: ""CODIGO_BARRA"" BIGINT)"; SQL statement:
-INSERT INTO productos VALUES (1,'Oreo','Mondelez',7622201693091, 'Galletas', 108, 'Gramos', 'Doble galleta sabor chocolate a chocolate con crema sabor a vainilla') [22018-214]
