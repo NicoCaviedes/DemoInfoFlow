@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <p>Ingrese ID Producto que desea buscar</p>
+  <mat-form-field appearance="outline">
+    <mat-label>ID Producto</mat-label>
+    <input matInput [(ngModel)]="data.idProduct" placeholder="0" value="0" type="number">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Salir</button>
+  <button mat-button [mat-dialog-close]="data.idProduct" cdkFocusInitial>Buscar</button>
+</div>

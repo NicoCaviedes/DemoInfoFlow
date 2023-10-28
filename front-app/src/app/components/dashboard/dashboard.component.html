@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+<br>
+<main class="container-fluid">
+    <div class="d-flex flex-row justify-content-center">
+        <mat-card class="border shadow p-3 mb-5 bg-body-tertiary rounded">
+            <mat-card-content>
+                <h2 class="text-center">Opciones:</h2>
+                <section class="d-flex">
+                    <button mat-raised-button (click)="getAllProducts()">Consultar Todos los Productos</button>
+                    <button mat-raised-button (click)="openPopUp()">Buscar Producto Por ID</button>
+                </section>
+            </mat-card-content>
+        </mat-card>
+    </div>
+        
+    <div *ngIf="isViewAllProds()">  <!-- *ngIf="flagViewAllProds" -->
+        <br>
+        <mat-card class="border shadow p-3 mb-5 bg-body-tertiary rounded">
+            <mat-card-content>
+                <h1>Información API:</h1>
+                <table *ngIf="listProducts != undefined && listProducts.length > 0" mat-table [dataSource]="listProducts" class="mat-elevation-z8">
+                    
+                    <!-- ID Product Column -->
+                    <ng-container matColumnDef="ID Producto">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.idProducto}} </td>
+                    </ng-container>
+                    
+                    <!-- Nombre Producto Column -->
+                    <ng-container matColumnDef="Nombre Producto">
+                        <th mat-header-cell *matHeaderCellDef> Nombre Producto </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nombreProducto}} </td>
+                    </ng-container>
+                    
+                    <!-- Nombre Proveedor Column -->
+                    <ng-container matColumnDef="Nombre Proveedor">
+                        <th mat-header-cell *matHeaderCellDef> Nombre Proveedor </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nombreProveedor}} </td>
+                    </ng-container>
+                    
+                    <!-- Codigo Barra Column -->
+                    <ng-container matColumnDef="Codigo Barra">
+                        <th mat-header-cell *matHeaderCellDef> Codigo Barra </th>
+                        <td mat-cell *matCellDef="let element"> {{element.codigoBarra}} </td>
+                    </ng-container>
+                    
+                    <!-- Tipo Producto Column -->
+                    <ng-container matColumnDef="Tipo Producto">
+                        <th mat-header-cell *matHeaderCellDef> Tipo Producto </th>
+                        <td mat-cell *matCellDef="let element"> {{element.tipoProducto}} </td>
+                    </ng-container>
+                    
+                    <!-- Peso Neto Column -->
+                    <ng-container matColumnDef="Peso Neto">
+                        <th mat-header-cell *matHeaderCellDef> Peso Neto </th>
+                        <td mat-cell *matCellDef="let element"> {{element.pesoNeto}} {{element.unidadPesoNeto}} </td>
+                    </ng-container>
+                    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <p class="fs-5" *ngIf="(listProducts == undefined) || (listProducts != undefined && listProducts.length == 0)">No se encontraron productos</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <!-- *ngIf="flagViewProd" -->
+    <div *ngIf="isViewProd()" class="d-flex flex-row justify-content-center">
+        <br>   
+        <mat-card class="border shadow p-3 mb-5 bg-body-tertiary rounded">
+            <mat-card-content> 
+                <h1>Información ID Producto: {{idProduct}}</h1>
+                <mat-list *ngIf="productSearched != undefined">
+                    <mat-list-item>Nombre Producto: {{productSearched.nombreProducto}}</mat-list-item>
+                    <mat-list-item>Nombre Proveedor: {{productSearched.nombreProveedor}}</mat-list-item>
+                    <mat-list-item>Codigo Barra: {{productSearched.codigoBarra}}</mat-list-item>
+                    <mat-list-item>Tipo Producto: {{productSearched.tipoProducto}}</mat-list-item>
+                    <mat-list-item>Peso Neto: {{productSearched.pesoNeto}} {{productSearched.unidadPesoNeto}}</mat-list-item>
+                    <mat-list-item>Descripcion Producto: {{productSearched.descProducto}}</mat-list-item>
+                </mat-list>
+                <p class="fs-5" *ngIf="productSearched == undefined">No se encontro un producto</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</main>
+<br>
+<app-footer></app-footer>
+<mat-spinner class="position-absolute top-50 start-50 translate-middle" *ngIf="isQueueActive()"></mat-spinner>
