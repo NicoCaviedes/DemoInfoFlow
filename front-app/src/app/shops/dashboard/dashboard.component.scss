@@ -1,0 +1,18 @@
+main{
+    min-height: 74.2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    margin: 10px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+app-footer{
+    margin-top: auto;
+}
