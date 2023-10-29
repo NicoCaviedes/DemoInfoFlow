@@ -1,24 +1,30 @@
+<div class="container p-3">
+    <div class="accordion-header"></div>
 
-<table class="table table-bordered" id="table-data">
-    <thead>
-    <tr>
-        <th>Producto</th>
-        <th>Cantidad</th>
-        <th>Valor</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let productos of data">
-        <td>{{ productos.Nombre }}</td>
-        <td>{{ productos.Precio }}</td>
-        <td>{{ productos.Proveedor }}</td>
-    </tr>
-    </tbody>
-</table>
-<div class="container">
+
     <div class="row">
         <div class="col">
-            <button size="small" (click)="generateExcel()">Descargar Excel</button>
+            <table class="table table-bordered" id="table-data">
+                <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Valor</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let productos of data">
+                    <td>{{ productos.Nombre }}</td>
+                    <td>{{ productos.Precio }}</td>
+                    <td>{{ productos.Proveedor }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <button class="btn btn-dark " size="small" (click)="generateExcel()">Descargar Excel</button>
         </div>
     </div>
 </div>

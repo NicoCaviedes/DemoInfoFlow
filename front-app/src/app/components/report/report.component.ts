@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import * as XLSX from "xlsx";
+import {SaleModel} from "../../models/salemodel/sale.model";
 
 @Component({
   selector: 'app-report',
@@ -10,6 +11,9 @@ import * as XLSX from "xlsx";
   styleUrls: ['./report.component.scss']
 })
 export class ReportComponent {
+    constructor() {
+    }
+
   data = [
     {"Nombre":"Arroz", "Precio":2000, "Proveedor":"Carozzi"},
     {"Nombre":"Fideo", "Precio":1000, "Proveedor":"Acuenta"},
@@ -17,6 +21,9 @@ export class ReportComponent {
     {"Nombre":"Vino", "Precio":3000, "Proveedor":"Gato"},
     {"Nombre":"Manzana", "Precio":200, "Proveedor":"Sureña"}
   ]
+
+
+
   fileName = "PlantillaExcel.xlsx";
   generateExcel() {
       let data = document.getElementById("table-data");
