@@ -2,13 +2,12 @@ package com.quatrosphere.apipublica.controllers;
 
 import com.quatrosphere.apipublica.models.inventory.InventoryModelDto;
 import com.quatrosphere.apipublica.services.InventoryService;
+import com.quatrosphere.apipublica.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,28 +18,28 @@ public class InventoryCustomerController {
     @Autowired
     private InventoryService invService;
 
-    @GetMapping
-    public ResponseEntity<List<InventoryModelDto>> getAllProds(){
-        try {
-            List<InventoryModelDto> listProds = invService.getAllProds();
+    @Autowired
+    private ProductService productService;
 
-            if (listProds.isEmpty())
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
-            return new ResponseEntity<>(listProds, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<InventoryModelDto> getProductInv(@PathVariable("id") long idProdInv){
-        InventoryModelDto productoEncontrado = invService.findById(idProdInv).transferToDto();
-        if(productoEncontrado != null)
-            return new ResponseEntity<>(productoEncontrado, HttpStatus.OK);
+    @GetMapping("/{idComercio}")
+    public ResponseEntity<List<InventoryModelDto>> getInventoryd(@PathVariable("idComercio") long idComercio){
+        List<InventoryModelDto> inventarioComercio = invService.findByComercio(idComercio);
+        if(inventarioComercio != null)
+            return new ResponseEntity<>(inventarioComercio, HttpStatus.OK);
         else
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @PostMapping("/guardar")
+    public ResponseEntity<Boolean> saveProductInventory(@RequestBody InventoryModelDto inventory){
+        try {
+            invService.save(inventory.transferToModel());
+            return new ResponseEntity<>(true, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
 
 }

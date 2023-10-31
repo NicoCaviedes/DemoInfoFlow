@@ -36,7 +36,7 @@ public class UserModel {
         userTrf.setEmailUser(this.emailUser);
         userTrf.setPasswordUser(this.passwordUser);
         userTrf.setPassConfUser(this.passConfUser);
-
+        userTrf.setIdComercio(comercio.getIdEmpresa());
         return userTrf;
     }
 }

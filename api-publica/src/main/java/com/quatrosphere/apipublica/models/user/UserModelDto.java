@@ -1,5 +1,7 @@
 package com.quatrosphere.apipublica.models.user;
 
+import com.quatrosphere.apipublica.models.customer.CustomerModel;
+import com.quatrosphere.apipublica.models.customer.CustomerModelDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
@@ -15,4 +17,5 @@ public class UserModelDto {
     private String emailUser;
     private String passwordUser;
     private String passConfUser;
+    private long idComercio;
 }
