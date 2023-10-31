@@ -1,19 +1,19 @@
-package com.quatrosphere.apipublica.models;
+package com.quatrosphere.apipublica.models.product;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.quatrosphere.apipublica.models.base.BaseDto;
+import com.quatrosphere.apipublica.models.base.BaseModel;
+import com.quatrosphere.apipublica.models.inventory.InventoryModel;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
+
+import java.util.List;
 
 @Entity
 @Table(name = "productos")
 @Data @ToString
-public class ProductModel{
+public class ProductModel extends BaseModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,6 +41,8 @@ public class ProductModel{
     @Column(name = "desripcion_producto")
     private String descProducto;
 
+
+    @Override
     public ProductModelDto transferToDto(){
         ProductModelDto productTrf = new ProductModelDto();
         productTrf.setIdProducto(this.idProducto);

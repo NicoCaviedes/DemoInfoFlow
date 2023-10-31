@@ -2,7 +2,7 @@ package com.quatrosphere.apipublica.controllers;
 
 import java.util.List;
 
-import com.quatrosphere.apipublica.models.ProductModelDto;
+import com.quatrosphere.apipublica.models.product.ProductModelDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,13 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.quatrosphere.apipublica.models.ProductModel;
 import com.quatrosphere.apipublica.services.ProductService;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping("/api/products")
 @RestController
-public class PublicProduct {
+public class PublicProductController {
 
     @Autowired
     private ProductService prodService;
@@ -26,7 +25,7 @@ public class PublicProduct {
     @GetMapping
     public ResponseEntity<List<ProductModelDto>> getAllProducts() {
         try {
-            List<ProductModelDto> listProducts = prodService.findAll();
+            List<ProductModelDto> listProducts = prodService.getAllProdDtos();
 
             if (listProducts.isEmpty())
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
