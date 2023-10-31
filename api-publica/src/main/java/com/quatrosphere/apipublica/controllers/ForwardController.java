@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ForwardController {
 
-    @GetMapping
+    @GetMapping(value = {"/","/login","/inventory","dashboard"})
     public String frontend(){
         return "forward:/";
     }
