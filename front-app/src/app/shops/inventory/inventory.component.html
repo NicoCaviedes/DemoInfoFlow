@@ -4,35 +4,39 @@
     <table [dataSource]="listProducts" mat-table class="mat-elevation-z8">
         <ng-container matColumnDef="ID Producto">
             <th mat-header-cell *matHeaderCellDef> ID Producto </th>
-            <td mat-cell *matCellDef="let element">{{ element.idProducto }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.idProd }}</td>
         </ng-container>
         <ng-container matColumnDef="Nombre Producto">
             <th mat-header-cell *matHeaderCellDef> Nombre Producto </th>
-            <td mat-cell *matCellDef="let element">{{ element.nombreProducto }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.nameProd }}</td>
         </ng-container>
-        <ng-container matColumnDef="Nombre Proveedor">
-            <th mat-header-cell *matHeaderCellDef> Nombre Proveedor </th>
-            <td mat-cell *matCellDef="let element">{{ element.nombreProveedor }}</td>
+        <ng-container matColumnDef="ID Proveedor">
+            <th mat-header-cell *matHeaderCellDef> ID Proveedor </th>
+            <td mat-cell *matCellDef="let element">{{ element.idCompany }}</td>
         </ng-container>
         <ng-container matColumnDef="Codigo Barra">
             <th mat-header-cell *matHeaderCellDef> Codigo Barra </th>
-            <td mat-cell *matCellDef="let element">{{ element.codigoBarra }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.barcode }}</td>
         </ng-container>
         <ng-container matColumnDef="Tipo Producto">
             <th mat-header-cell *matHeaderCellDef> Tipo Producto </th>
-            <td mat-cell *matCellDef="let element">{{ element.tipoProducto }}</td>
-        </ng-container>
-        <ng-container matColumnDef="Peso Neto">
-            <th mat-header-cell *matHeaderCellDef> Peso Neto </th>
-            <td mat-cell *matCellDef="let element">{{ element.pesoNeto }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.typeProd }}</td>
         </ng-container>
         <ng-container matColumnDef="Cantidad">
             <th mat-header-cell *matHeaderCellDef> Cantidad </th>
-            <td mat-cell *matCellDef="let element">{{ element.idProducto }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.quantityProds }}</td>
         </ng-container>
         <ng-container matColumnDef="Precio Unitario">
             <th mat-header-cell *matHeaderCellDef> Precio Unitario </th>
-            <td mat-cell *matCellDef="let element">{{ element.idProducto }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.unitPriceProd }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Peso Neto">
+            <th mat-header-cell *matHeaderCellDef> Peso Neto </th>
+            <td mat-cell *matCellDef="let element">{{ element.netWeight }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Unidad peso neto">
+            <th mat-header-cell *matHeaderCellDef> Unidad peso neto </th>
+            <td mat-cell *matCellDef="let element">{{ element.unitNetWeight }}</td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
