@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class CustomerModelDto extends BaseDto {
 
     private long idEmpresa;

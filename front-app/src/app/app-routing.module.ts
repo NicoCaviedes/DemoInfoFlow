@@ -7,20 +7,16 @@ const routes: Routes = [
     loadComponent: () => import('./components/login/login.component').then( m => m.LoginComponent),
   },
   {
-    path: '',
-    loadComponent: () => import('./components/dashboard/dashboard.component').then( m => m.DashboardComponent),
-  },
-  {
-    path: 'register',
-    loadComponent: () => import('./components/register/register.component').then( m => m.RegisterComponent),
-  },
-  {
     path: 'inventory',
     loadComponent: () => import('./shops/inventory/inventory.component').then( m => m.InventoryComponent),
   },
   {
     path: 'dashboard',
     loadComponent: () => import('./shops/dashboard/dashboard.component').then( m => m.DashboardComponent),
+  },
+  {
+    path: '',
+    loadComponent: () => import('./components/dashboard/dashboard.component').then( m => m.DashboardComponent),
   },
   {
     path: '**',

@@ -12,6 +12,7 @@ import lombok.ToString;
 import java.util.List;
 
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class InventoryModelDto extends BaseDto {
 
     private long idInv;
