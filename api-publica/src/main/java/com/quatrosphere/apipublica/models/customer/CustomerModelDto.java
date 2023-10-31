@@ -4,6 +4,7 @@ import com.quatrosphere.apipublica.models.base.BaseDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Data @ToString

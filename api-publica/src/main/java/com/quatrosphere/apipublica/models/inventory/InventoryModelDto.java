@@ -6,6 +6,7 @@ import com.quatrosphere.apipublica.models.user.UserModel;
 import com.quatrosphere.apipublica.models.user.UserModelDto;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.List;
