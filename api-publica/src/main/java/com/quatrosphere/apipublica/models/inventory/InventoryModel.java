@@ -6,6 +6,7 @@ import com.quatrosphere.apipublica.models.sales.DetailSaleModel;
 import com.quatrosphere.apipublica.models.user.UserModel;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "inventario_comercios")
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class InventoryModel extends BaseModel {
 
     @Id

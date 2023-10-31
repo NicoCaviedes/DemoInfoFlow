@@ -9,7 +9,7 @@
             <p>
                 <mat-form-field appearance="outline">
                   <mat-label>Email</mat-label>
-                  <input matInput placeholder="correo@dominio.com" required>
+                  <input matInput placeholder="correo@dominio.com" [(ngModel)]="emailForm" required>
                   <mat-icon matSuffix>mail</mat-icon>
                   <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                 </mat-form-field>
@@ -17,14 +17,13 @@
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'" required>
-                    <button id="iconPassword" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="passwordForm" required>
+                    <button id="iconPassword" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" mat-stroked-button>
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
             </p>
-            <button mat-raised-button>Iniciar Sesion</button>
-            <a mat-button [routerLink]="'/register'">¡Registrate Acá!</a>
+            <button mat-raised-button (click)="loginUser()">Iniciar Sesion</button>
         </mat-card-content>
     </mat-card>
 </main>

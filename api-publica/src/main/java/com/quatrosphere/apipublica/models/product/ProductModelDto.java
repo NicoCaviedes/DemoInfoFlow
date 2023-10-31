@@ -2,9 +2,11 @@ package com.quatrosphere.apipublica.models.product;
 
 import com.quatrosphere.apipublica.models.base.BaseDto;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class ProductModelDto extends BaseDto {
 
     private long idProducto;

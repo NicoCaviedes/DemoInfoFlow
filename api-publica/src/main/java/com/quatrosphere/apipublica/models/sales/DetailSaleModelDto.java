@@ -8,9 +8,11 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Data@ToString
+@EqualsAndHashCode(callSuper=false)
 public class DetailSaleModelDto extends BaseDto {
     private int quantityProds;
     private long totalPrice;

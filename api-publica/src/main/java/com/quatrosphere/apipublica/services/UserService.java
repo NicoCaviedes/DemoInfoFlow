@@ -17,6 +17,6 @@ public class UserService extends BaseService<UserModel>{
     }
 
     public UserModel findByEmail(String email){
-        return repository.findByEmail_User(email);
+        return repository.findByEmailUser(email);
     }
 }

@@ -4,10 +4,12 @@ import com.quatrosphere.apipublica.models.base.BaseModel;
 import com.quatrosphere.apipublica.models.inventory.InventoryModel;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 @Entity
 @Table(name = "deta_vta_comerio")
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class DetailSaleModel extends BaseModel {
 
     @Id

@@ -5,11 +5,13 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.List;
 
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class SaleModelDto extends BaseDto {
 
     private long idSale;
