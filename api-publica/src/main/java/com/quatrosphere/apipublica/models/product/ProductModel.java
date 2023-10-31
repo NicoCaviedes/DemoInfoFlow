@@ -46,6 +46,7 @@ public class ProductModel extends BaseModel {
     public ProductModelDto transferToDto(){
         ProductModelDto productTrf = new ProductModelDto();
         productTrf.setIdProducto(this.idProducto);
+        productTrf.setNombreProducto(this.nombreProducto);
         productTrf.setNombreProveedor(this.nombreProveedor);
         productTrf.setCodigoBarra(this.codigoBarra);
         productTrf.setTipoProducto(this.tipoProducto);
