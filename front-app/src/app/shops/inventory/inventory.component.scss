@@ -1,0 +1,16 @@
+main{
+    min-height: 74.2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+app-footer{
+    margin-top: auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    font-weight: bold;
+}
