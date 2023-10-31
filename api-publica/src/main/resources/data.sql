@@ -12,3 +12,16 @@ INSERT INTO productos(id_producto,nombre_producto,nombre_proveedor,codigo_barra,
 INSERT INTO productos(id_producto,nombre_producto,nombre_proveedor,codigo_barra,tipo_producto,peso_neto,unidad_peso_neto,desripcion_producto) VALUES (12,'Limpiador multiespacios','Homecare',7807910029847, 'Limpieza', 1800, 'Mililitros', 'Limpiador de pisos aromaticos');
 INSERT INTO productos(id_producto,nombre_producto,nombre_proveedor,codigo_barra,tipo_producto,peso_neto,unidad_peso_neto,desripcion_producto) VALUES (13,'Insectisida Mata arañas','Raid Max',7790520009234, 'Insectisidas', 339, 'Gramos', 'Insectisida multiuso');
 INSERT INTO productos(id_producto,nombre_producto,nombre_proveedor,codigo_barra,tipo_producto,peso_neto,unidad_peso_neto,desripcion_producto) VALUES (14,'Vino Reserva Merlot','Carmen', 7804335002646, 'Alcoholes', 750, 'Mililitros', 'Alcoholes Vino');
+
+INSERT INTO empresa(id_empresa, rut_empresa, nombre_empresa, direccion_empresa, fono_empresa) VALUES (1, '18.221.431-5', 'QuatroSphere', 'Avenida siempre viva 123', 967453291);
+
+INSERT INTO usuario(id_user, email_user, password, id_empresa) VALUES (1,'ni.caviedes@duocuc.cl', 'hola123', 1);
+INSERT INTO usuario(id_user, email_user, password, id_empresa) VALUES (2,'dav.rubio@duocuc.cl', 'hola123', 1);
+INSERT INTO usuario(id_user, email_user, password) VALUES (3,'s.plazae@duocuc.cl', 'hola123');
+INSERT INTO usuario(id_user, email_user, password) VALUES (4,'j.escobar@duocuc.cl', 'hola123');
+
+INSERT INTO inventario_comercios(id_inv, quantity_prods, unit_price_prod, id_prod, nombre_producto, codigo_barra, tipo_producto, peso_neto, unidad_peso_neto, id_empresa) VALUES (1, 15, 430, 1, 'Oreo', 7622201693091, 'Galletas', 108, 'Gramos', 1);
+INSERT INTO inventario_comercios(id_inv, quantity_prods, unit_price_prod, id_prod, nombre_producto, codigo_barra, tipo_producto, peso_neto, unidad_peso_neto, id_empresa) VALUES (2, 6, 3100, 3, 'Pepsi', 7801620017552, 'Bebidas', 3, 'Litros', 1);
+INSERT INTO inventario_comercios(id_inv, quantity_prods, unit_price_prod, id_prod, nombre_producto, codigo_barra, tipo_producto, peso_neto, unidad_peso_neto, id_empresa) VALUES (3, 9, 2099, 4, 'Benedictino sin gas', 782820443301, 'Bebidas', 3, 'Litros', 1);
+INSERT INTO inventario_comercios(id_inv, quantity_prods, unit_price_prod, id_prod, nombre_producto, codigo_barra, tipo_producto, peso_neto, unidad_peso_neto, id_empresa) VALUES (4, 4, 1780, 7, 'Jabon Liquido Aceite Coco y Jazmin', 7804920003065, 'Jabones', 750, 'Mililitros', 1);
+INSERT INTO inventario_comercios(id_inv, quantity_prods, unit_price_prod, id_prod, nombre_producto, codigo_barra, tipo_producto, peso_neto, unidad_peso_neto, id_empresa) VALUES (5, 7, 690, 11, 'Durazno en cubitos', 7801305002057, 'Comida', 380, 'Gramos', 1);

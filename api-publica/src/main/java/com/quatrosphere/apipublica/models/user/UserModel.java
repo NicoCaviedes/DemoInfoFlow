@@ -1,5 +1,6 @@
 package com.quatrosphere.apipublica.models.user;
 
+import com.quatrosphere.apipublica.models.customer.CustomerModel;
 import com.quatrosphere.apipublica.models.inventory.InventoryModel;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -25,8 +26,9 @@ public class UserModel {
     @Transient
     private String passConfUser;
 
-    @OneToMany(mappedBy = "user")
-    private List<InventoryModel> listInventories;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_empresa")
+    private CustomerModel comercio;
 
     public UserModelDto transferToDto(){
         UserModelDto userTrf = new UserModelDto();

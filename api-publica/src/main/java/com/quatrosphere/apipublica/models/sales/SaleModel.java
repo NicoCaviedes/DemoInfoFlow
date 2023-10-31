@@ -23,7 +23,7 @@ public class SaleModel extends BaseModel {
     @Column(name = "total_price_sale")
     private long totalPriceSale;
 
-    @OneToMany(mappedBy = "saleProduct")
+    @OneToMany(mappedBy = "saleHeader")
     private List<DetailSaleModel> detailSale;
 
     @Override

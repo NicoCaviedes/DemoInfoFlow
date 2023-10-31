@@ -10,6 +10,10 @@ import lombok.ToString;
 @Data @ToString
 public class DetailSaleModel extends BaseModel {
 
+    @Id
+    @Column(name = "id_detalle")
+    private long idDetalle;
+
     @Column(name = "quantity_prods")
     private int quantityProds;
 
