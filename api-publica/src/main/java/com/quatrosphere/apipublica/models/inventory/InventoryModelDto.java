@@ -25,7 +25,19 @@ public class InventoryModelDto extends BaseDto {
     private long idEmpresa;
 
     @Override
-    public Object transferToModel() {
-        return null;
+    public InventoryModel transferToModel() {
+        InventoryModel invTrf = new InventoryModel();
+        invTrf.setIdInv(this.idInv);
+        invTrf.setQuantityProds(this.quantityProds);
+        invTrf.setUnitPriceProd(this.unitPriceProd);
+        invTrf.setIdProd(this.idProd);
+        invTrf.setNombreProd(this.nombreProd);
+        invTrf.setCodigoBarra(this.codigoBarra);
+        invTrf.setTipoProducto(this.tipoProducto);
+        invTrf.setPesoNeto(this.pesoNeto);
+        invTrf.setUnidadPesoNeto(this.unidadPesoNeto);
+        invTrf.setIdEmpresa(this.idEmpresa);
+
+        return invTrf;
     }
 }
