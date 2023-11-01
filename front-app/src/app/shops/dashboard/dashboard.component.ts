@@ -9,6 +9,7 @@ import { InventoryModel } from 'src/app/models/inventory/inventory.model';
 import { UserModel } from 'src/app/models/user/user.model';
 import { ManageLocalData } from 'src/app/utils/manage.localdata';
 import { InventoryService } from 'src/app/service/inventory/inventory.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +26,10 @@ export class DashboardComponent {
   cantidadTmp!: number;
   userData: UserModel;
 
-  constructor(private productService: ProductService, private inventoryService: InventoryService){
+  constructor(private productService: ProductService, 
+    private inventoryService: InventoryService,
+    private router: Router,
+  ){
     this.userData = ManageLocalData.getLocalData();
   }
 
@@ -36,11 +40,10 @@ export class DashboardComponent {
   }
 
   saveProduct(){
-    console.log('hola');
     const newProduct: InventoryModel = {
       idProd: this.product.idProducto,
       nombreProd: this.product.nombreProducto,
-      idEmpresa: this.userData.idShop,
+      idEmpresa: this.userData.idComercio,
       codigoBarra: this.product.codigoBarra,
       tipoProducto: this.product.tipoProducto,
       quantityProds: this.cantidadTmp,
@@ -49,8 +52,9 @@ export class DashboardComponent {
       unidadPesoNeto: this.product.unidadPesoNeto,
       idInv: this.product.idProducto,
     };
-    console.log(newProduct);
     this.inventoryService.saveInventory(newProduct).subscribe(result => console.log(result));
-  }
+
+    this.router.navigate(['/inventory'])
+  } 
   
 }

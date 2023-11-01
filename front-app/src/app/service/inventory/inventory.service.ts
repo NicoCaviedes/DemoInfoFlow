@@ -14,9 +14,9 @@ export class InventoryService {
 
   readonly urlBase = 'http://localhost:8080/api/private/inventory';
 
-  getInventory(idEmpresa: number): Observable<InventoryModel[]>{
+  getInventory(): Observable<InventoryModel[]>{
     const localData = ManageLocalData.getLocalData();
-    return this.http.get<InventoryModel[]>(this.urlBase+'/'+idEmpresa);
+    return this.http.get<InventoryModel[]>(this.urlBase+'/'+localData.idComercio);
   }
 
   saveInventory(product: InventoryModel){

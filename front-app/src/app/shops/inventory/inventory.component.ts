@@ -32,20 +32,17 @@ export class InventoryComponent implements OnInit{
   
   listProducts!: InventoryModel[];
   flagQueue: boolean = false;
-  userData: UserModel;
 
   ngOnInit(): void {
   }
 
   constructor(private inventoryService: InventoryService){
-    this.userData = ManageLocalData.getLocalData();
     this.getInventory();
   }
 
   getInventory(){
-    this.inventoryService.getInventory(this.userData.idShop).subscribe(result => {
+    this.inventoryService.getInventory().subscribe(result => {
       this.listProducts = result;
-      console.log(result)
     });
   }
 

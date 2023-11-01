@@ -3,5 +3,5 @@ export interface UserModel {
     emailUser: string;
     passwordUser: string;
     passConfUser: string;
-    idShop: number;
+    idComercio: number;
 }

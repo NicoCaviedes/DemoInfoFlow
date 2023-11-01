@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { LoginModelApi } from 'src/app/models/login/login.model';
 import { UserModel } from 'src/app/models/user/user.model';
 import { ManageLocalData } from 'src/app/utils/manage.localdata';
 
@@ -18,8 +17,8 @@ export class LoginService {
     private router: Router,
   ) { }
 
-  public loginUser(userModel: UserModel): Observable<LoginModelApi> {
-    return this.http.post<LoginModelApi>(this.urlLogin, userModel);
+  public loginUser(userModel: UserModel): Observable<any[]> {
+    return this.http.post<any[]>(this.urlLogin, userModel);
   }
   
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{

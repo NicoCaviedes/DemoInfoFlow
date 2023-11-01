@@ -46,21 +46,23 @@ export class LoginComponent implements OnInit{
       emailUser: this.emailForm,
       passwordUser: this.passwordForm,
       passConfUser: '',
-      idShop: 0
+      idComercio: 0
     };
 
     this.loginService.loginUser(userForm).subscribe(result => {
-      if(result.usuario?.idUser != 0){
-        ManageLocalData.saveLoginLocalData(result.usuario!);
-        this.router.navigate(['/dashboard'], {state: {userData: result.usuario!}})
+      if(result[1] != null){
+        console.log(result[0])
+        ManageLocalData.saveLoginLocalData(result[1]!);
+        this.router.navigate(['/dashboard'], {state: {userData: result[1]}})
+        console.log('Guardamos info y fuimos redirec')
       } else {
-        this.openSnackBar(result.respuesta);
+        this.openSnackBar(result[0]);
       }
     });
   }
 
   openSnackBar(message: string) {
-    this.snackBar.open(message, 'Salir');
+    this.snackBar.open(message, 'Cerrar');
   }
 
 }
