@@ -9,10 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
-import { ProductModel } from 'src/app/models/product/product.model';
-import { ProductService } from 'src/app/service/productservice.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
+import { InventoryService } from 'src/app/service/inventory/inventory.service';
+import { InventoryModel } from 'src/app/models/inventory/inventory.model';
 
 @Component({
   selector: 'app-inventory',
@@ -26,20 +26,20 @@ import { MatTableModule } from '@angular/material/table';
 })
 export class InventoryComponent implements OnInit{
   
-  displayedColumns: string[] = ['ID Producto','Nombre Producto','Nombre Proveedor','Codigo Barra','Tipo Producto','Peso Neto','Cantidad','Precio Unitario'];
+  displayedColumns: string[] = ['ID Producto','Nombre Producto','ID Proveedor','Codigo Barra','Tipo Producto','Cantidad','Precio Unitario', 'Peso Neto','Unidad peso neto'];
   
-  listProducts!: ProductModel[];
+  listProducts!: InventoryModel[];
   flagQueue: boolean = false;
   
   ngOnInit(): void {
   }
 
-  constructor(private productService: ProductService){
-    this.getAllProducts();
+  constructor(private inventoryService: InventoryService){
+    this.getInventory();
   }
 
-  getAllProducts(){
-    this.productService.getAllProds().subscribe(result => {
+  getInventory(){
+    this.inventoryService.getInventory().subscribe(result => {
       this.listProducts = result;
       console.log(result)
     });

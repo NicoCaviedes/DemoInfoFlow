@@ -3,6 +3,7 @@ package com.quatrosphere.apipublica.models.sales;
 import com.quatrosphere.apipublica.models.base.BaseModel;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "ventas_comercio")
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class SaleModel extends BaseModel {
 
     @Id

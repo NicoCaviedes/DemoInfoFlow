@@ -4,6 +4,7 @@ import com.quatrosphere.apipublica.models.base.BaseModel;
 import com.quatrosphere.apipublica.models.user.UserModel;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "empresa")
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class CustomerModel extends BaseModel {
 
     @Id

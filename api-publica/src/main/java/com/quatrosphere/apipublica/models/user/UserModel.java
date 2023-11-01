@@ -4,6 +4,7 @@ import com.quatrosphere.apipublica.models.customer.CustomerModel;
 import com.quatrosphere.apipublica.models.inventory.InventoryModel;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "usuario")
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class UserModel {
 
     @Id
@@ -36,7 +38,7 @@ public class UserModel {
         userTrf.setEmailUser(this.emailUser);
         userTrf.setPasswordUser(this.passwordUser);
         userTrf.setPassConfUser(this.passConfUser);
-
+        userTrf.setIdComercio(comercio.getIdEmpresa());
         return userTrf;
     }
 }
