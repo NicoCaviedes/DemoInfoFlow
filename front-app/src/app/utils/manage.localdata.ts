@@ -15,4 +15,12 @@ export class ManageLocalData {
     static getLocalData(): UserModel{
         return JSON.parse(localStorage.getItem('userdata') || '{}');
     }
+
+    static isLocalData(): boolean {
+        return localStorage.getItem('userdata') != undefined;
+    }
+
+    static deleteLocalData(){
+        localStorage.clear();
+    }
 }

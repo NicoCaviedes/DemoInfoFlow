@@ -11,11 +11,14 @@ import { UserModel } from 'src/app/models/user/user.model';
 import { LoginService } from 'src/app/service/login/login.service';
 import { FormsModule } from '@angular/forms';
 import { ManageLocalData } from 'src/app/utils/manage.localdata';
+import { NavbarComponent } from 'src/app/base/navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatIconModule, MatCardModule, MatButtonModule, RouterModule, FormsModule, MatSnackBarModule],
+  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatIconModule, MatCardModule, MatButtonModule, RouterModule, FormsModule, MatSnackBarModule,
+    NavbarComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })

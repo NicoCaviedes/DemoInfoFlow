@@ -13,6 +13,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { InventoryService } from 'src/app/service/inventory/inventory.service';
 import { InventoryModel } from 'src/app/models/inventory/inventory.model';
+import { UserModel } from 'src/app/models/user/user.model';
+import { ManageLocalData } from 'src/app/utils/manage.localdata';
 
 @Component({
   selector: 'app-inventory',
@@ -30,16 +32,18 @@ export class InventoryComponent implements OnInit{
   
   listProducts!: InventoryModel[];
   flagQueue: boolean = false;
-  
+  userData: UserModel;
+
   ngOnInit(): void {
   }
 
   constructor(private inventoryService: InventoryService){
+    this.userData = ManageLocalData.getLocalData();
     this.getInventory();
   }
 
   getInventory(){
-    this.inventoryService.getInventory().subscribe(result => {
+    this.inventoryService.getInventory(this.userData.idShop).subscribe(result => {
       this.listProducts = result;
       console.log(result)
     });
