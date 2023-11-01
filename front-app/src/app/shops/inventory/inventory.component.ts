@@ -35,6 +35,7 @@ export class InventoryComponent implements OnInit{
   }
 
   constructor(private inventoryService: InventoryService){
+    this.getInventory();
   }
 
   getInventory(){

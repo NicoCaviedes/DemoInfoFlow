@@ -16,7 +16,10 @@ export class InventoryService {
 
   getInventory(): Observable<InventoryModel[]>{
     const localData = ManageLocalData.getLocalData();
-    return this.http.get<InventoryModel[]>(this.urlBase+'/'+localData.idShop);
+    return this.http.get<InventoryModel[]>(this.urlBase+'/1');
   }
 
+  saveInventory(product: InventoryModel){
+    return this.http.post<InventoryModel>(this.urlBase+'/guardar', product);
+  }
 }

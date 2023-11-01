@@ -1,5 +1,5 @@
 export interface InventoryModel {
-    idInventory: number;
+    /* idInventory: number;
     quantityProds: number;
     unitPriceProd: number;
     idProd: number;
@@ -8,5 +8,15 @@ export interface InventoryModel {
     typeProd: string;
     netWeight: number;
     unitNetWeight: string;
-    idCompany: number;
+    idCompany: number; */
+    idInv: number;
+    quantityProds: number;
+    unitPriceProd: number;
+    idProd: number;
+    nombreProd: string;
+    codigoBarra: number;
+    tipoProducto: string;
+    pesoNeto: number;
+    unidadPesoNeto: string;
+    idEmpresa: number;
 }

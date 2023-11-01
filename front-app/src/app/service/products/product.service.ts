@@ -21,4 +21,8 @@ export class ProductService {
   getProduct(idProduct: number): Observable<ProductModel> {
     return this.http.get<ProductModel>(`${this.urlAPIPublic}/${idProduct}`);
   }
+
+  saveProduct(idProduct: number){
+    return this.http.post<ProductModel>(this.urlAPIPublic, idProduct)
+  }
 }

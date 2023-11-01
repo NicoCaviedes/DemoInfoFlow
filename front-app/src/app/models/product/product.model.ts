@@ -4,7 +4,7 @@ export interface ProductModel {
     nombreProveedor: string;
     codigoBarra: number;
     tipoProducto: string;
-    pesoNeto: string;
+    pesoNeto: number;
     unidadPesoNeto: string;
     descProducto: string;
 }
