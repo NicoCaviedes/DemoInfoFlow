@@ -11,9 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { ProductModel } from 'src/app/models/product/product.model';
-import { ProductService } from 'src/app/service/productservice.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
+import { ProductService } from 'src/app/service/products/product.service';
 
 @Component({
     selector: 'app-dashboard',

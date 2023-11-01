@@ -6,21 +6,40 @@ import com.quatrosphere.apipublica.models.user.UserModel;
 import com.quatrosphere.apipublica.models.user.UserModelDto;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.List;
 
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class InventoryModelDto extends BaseDto {
 
     private long idInv;
-    private long idProd;
     private long quantityProds;
     private long unitPriceProd;
-    private UserModelDto user;
+    private long idProd;
+    private String nombreProd;
+    private long codigoBarra;
+    private String tipoProducto;
+    private int pesoNeto;
+    private String unidadPesoNeto;
+    private long idEmpresa;
 
     @Override
-    public Object transferToModel() {
-        return null;
+    public InventoryModel transferToModel() {
+        InventoryModel invTrf = new InventoryModel();
+        invTrf.setIdInv(this.idInv);
+        invTrf.setQuantityProds(this.quantityProds);
+        invTrf.setUnitPriceProd(this.unitPriceProd);
+        invTrf.setIdProd(this.idProd);
+        invTrf.setNombreProd(this.nombreProd);
+        invTrf.setCodigoBarra(this.codigoBarra);
+        invTrf.setTipoProducto(this.tipoProducto);
+        invTrf.setPesoNeto(this.pesoNeto);
+        invTrf.setUnidadPesoNeto(this.unidadPesoNeto);
+        invTrf.setIdEmpresa(this.idEmpresa);
+
+        return invTrf;
     }
 }

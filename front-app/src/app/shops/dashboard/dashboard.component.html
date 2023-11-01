@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<br>
+<main>
+    <div class="d-flex flex-row justify-content-center">
+        <div class="card p-3">
+            <h2 class="card-title">Buscar por codigo de barra: <input [(ngModel)]="idProduct" type="text"></h2>
+            <button type="button" class="btn btn-success" mdbRipple (click)="getProduct()">Buscar</button>
+            <div class="card-body border shadow p-3 bg-body-tertiary rounded" *ngIf="product != undefined">
+                <h1>Información del Producto: </h1>
+                <ul class="list-group list-group-light">
+                    <li class="list-group-item">Nombre Producto: {{ product.nombreProducto }}</li>
+                    <li class="list-group-item">Nombre Proveedor: {{ product.nombreProveedor }}</li>
+                    <li class="list-group-item">Codigo Barra: {{ product.codigoBarra }}</li>
+                    <li class="list-group-item">Tipo Producto: {{ product.tipoProducto }}</li>
+                    <li class="list-group-item">Peso Neto: {{ product.pesoNeto }} {{ product.unidadPesoNeto }}</li>
+                    <li class="list-group-item">Descripcion Producto: {{ product.descProducto }}</li>
+                </ul>
+                <label for="">Ingrese el valor: <input type="number" [(ngModel)]="valorTmp"></label>
+                <label for="">Ingrese la cantidad: <input type="number" [(ngModel)]="cantidadTmp"></label>
+                <button type="button" class="btn btn-info mt-3" mdbRipple (click)="saveProduct()">Guardar en inventario</button>
+            </div>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>

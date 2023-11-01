@@ -6,6 +6,7 @@ import com.quatrosphere.apipublica.models.base.BaseModel;
 import com.quatrosphere.apipublica.models.inventory.InventoryModel;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "productos")
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class ProductModel extends BaseModel {
     
     @Id
@@ -46,6 +48,7 @@ public class ProductModel extends BaseModel {
     public ProductModelDto transferToDto(){
         ProductModelDto productTrf = new ProductModelDto();
         productTrf.setIdProducto(this.idProducto);
+        productTrf.setNombreProducto(this.nombreProducto);
         productTrf.setNombreProveedor(this.nombreProveedor);
         productTrf.setCodigoBarra(this.codigoBarra);
         productTrf.setTipoProducto(this.tipoProducto);

@@ -3,6 +3,7 @@ package com.quatrosphere.apipublica.models.sales;
 import com.quatrosphere.apipublica.models.base.BaseModel;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "ventas_comercio")
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class SaleModel extends BaseModel {
 
     @Id
@@ -23,7 +25,7 @@ public class SaleModel extends BaseModel {
     @Column(name = "total_price_sale")
     private long totalPriceSale;
 
-    @OneToMany(mappedBy = "saleProduct")
+    @OneToMany(mappedBy = "saleHeader")
     private List<DetailSaleModel> detailSale;
 
     @Override

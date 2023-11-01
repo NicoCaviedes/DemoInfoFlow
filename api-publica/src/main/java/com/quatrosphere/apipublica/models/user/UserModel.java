@@ -1,8 +1,10 @@
 package com.quatrosphere.apipublica.models.user;
 
+import com.quatrosphere.apipublica.models.customer.CustomerModel;
 import com.quatrosphere.apipublica.models.inventory.InventoryModel;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "usuario")
 @Data @ToString
+@EqualsAndHashCode(callSuper=false)
 public class UserModel {
 
     @Id
@@ -25,8 +28,9 @@ public class UserModel {
     @Transient
     private String passConfUser;
 
-    @OneToMany(mappedBy = "user")
-    private List<InventoryModel> listInventories;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_empresa")
+    private CustomerModel comercio;
 
     public UserModelDto transferToDto(){
         UserModelDto userTrf = new UserModelDto();
@@ -34,7 +38,7 @@ public class UserModel {
         userTrf.setEmailUser(this.emailUser);
         userTrf.setPasswordUser(this.passwordUser);
         userTrf.setPassConfUser(this.passConfUser);
-
+        userTrf.setIdComercio(comercio.getIdEmpresa());
         return userTrf;
     }
 }
