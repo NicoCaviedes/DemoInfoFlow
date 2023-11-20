@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -23,25 +25,28 @@ public class LoginController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<Map<String, UserModelDto>> loginUser(@RequestBody UserModelDto userLogin){
-        Map<String, UserModelDto> result = new HashMap<>();
+    public ResponseEntity<List<Object>> loginUser(@RequestBody UserModelDto userLogin){
+        List<Object> result = new ArrayList<>();
 
         try {
             UserModel userDatabase = userService.findByEmail(userLogin.getEmailUser());
-
             if (userDatabase == null || userLogin.getEmailUser().trim().isEmpty()) {
-                result.put(LoginMessage.NOT_FOUND.getMessage(), null);
+                result.add(LoginMessage.NOT_FOUND.getMessage());
+                result.add(null);
                 return new ResponseEntity<>(result, HttpStatus.OK);
             } else if (!userDatabase.getPasswordUser().equals(userLogin.getPasswordUser())) {
-                result.put(LoginMessage.FOUND_NOT_EQUAL_PASS.getMessage(), null);
+                result.add(LoginMessage.FOUND_NOT_EQUAL_PASS.getMessage());
+                result.add(null);
                 return new ResponseEntity<>(result, HttpStatus.OK);
             } else {
-                result.put(LoginMessage.USER_EXISTS.getMessage(), userDatabase.transferToDto());
+                result.add(LoginMessage.USER_EXISTS.getMessage());
+                result.add(userDatabase.transferToDto());
                 return new ResponseEntity<>(result, HttpStatus.OK);
             }
         } catch (Exception e){
-            result.put(LoginMessage.INTERNAL_ERROR.getMessage(), null);
-            return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
+            result.add(LoginMessage.INTERNAL_ERROR.getMessage());
+            result.add(null);
+            return new ResponseEntity<>(result, HttpStatus.OK);
         }
     }
 }

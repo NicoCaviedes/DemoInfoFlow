@@ -33,7 +33,9 @@ public class InventoryCustomerController {
     @PostMapping("/guardar")
     public ResponseEntity<Boolean> saveProductInventory(@RequestBody InventoryModelDto inventory){
         try {
-            invService.save(inventory.transferToModel());
+            System.out.println(inventory.transferToModel());
+            System.out.println(invService.save(inventory.transferToModel()));
+            /* invService.save(inventory.transferToModel());  */
             return new ResponseEntity<>(true, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR);
