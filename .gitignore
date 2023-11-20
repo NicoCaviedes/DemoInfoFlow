@@ -109,3 +109,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Config Local ###
+init-app/
