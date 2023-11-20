@@ -1,4 +1,0 @@
-allprojects{
-    group = 'com.quatrosphere'
-    version = '0.0.1'
-}
