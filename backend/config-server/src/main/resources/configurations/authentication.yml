@@ -1,7 +1,7 @@
 server:
-  port: 8094
+  port: 8098
   servlet:
-    context-path: /api/public/products
+    context-path: /api/priv/auth
 
 eureka:
   instance:
@@ -12,11 +12,11 @@ eureka:
 
 spring:
   application:
-    name: apipublic
+    name: authentication
   datasource:
-    url: jdbc:mysql://localhost:3308/store_db?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: store-microservice
-    password: sT0r3-m1sv3_Db
+    url: jdbc:mysql://localhost:3308/authentication_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: auth-microservice
+    password: auTh-m1sv3_Db
   jpa:
     hibernate:
       ddl-auto: update

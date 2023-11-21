@@ -1,11 +1,11 @@
+server:
+  port: 8080
+
 eureka:
   client:
     register-with-eureka: false
     service-url:
       defaultZone: http://localhost:8083/eureka/
-
-server:
-  port: 8080
 
 spring:
   application:
@@ -20,8 +20,22 @@ spring:
           uri: http://localhost:8090
           predicates:
             - Path=/api/priv/store/**
-      routes:
-        - id: stores
-          uri: http://localhost:8090
+        - id: apipublic
+          uri: http://localhost:8094
           predicates:
-            - Path=/api/priv/store/**
+            - Path=/api/public/products/**
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowCredentials: true 
+            maxAge: 3600 
+            allowedHeaders:
+              - AUTHORIZATION
+              - CONTENT_TYPE
+              - ACCEPT
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
