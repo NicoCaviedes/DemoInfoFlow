@@ -7,11 +7,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages =  {
-	"com.quatrosphere.apipublica.services",
-	"com.quatrosphere.apipublica.controllers",
-	"com.quatrosphere.apipublica.config",
+	"com.quatrosphere.storeservice.services",
+	"com.quatrosphere.storeservice.controllers",
+	"com.quatrosphere.storeservice.config",	
+	"com.quatrosphere.storeservice.mappers",
 })
-@EnableJpaRepositories(basePackages = "com.quatrosphere.apipublica.repositories")
+@EnableJpaRepositories(basePackages = "com.quatrosphere.storeservice.repositories")
 public class StoreServiceApplication {
 
 	public static void main(String[] args) {

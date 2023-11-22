@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Entity
-@Table(name = "deta_vta_comerio")
+@Table(name = "deta_vta_comercio")
 @Data @ToString
 @EqualsAndHashCode(callSuper = false)
 public class DetailSaleEntity extends BaseEntity{
