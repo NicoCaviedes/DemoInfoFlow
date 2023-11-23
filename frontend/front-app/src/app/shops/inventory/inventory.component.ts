@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
-import { InventoryService } from 'src/app/service/inventory/inventory.service';
+import { InventoryService } from 'src/app/service/private/inventory/inventory.service';
 import { InventoryModel } from 'src/app/models/inventory/inventory.model';
 import { UserModel } from 'src/app/models/user/user.model';
 import { ManageLocalData } from 'src/app/utils/manage.localdata';

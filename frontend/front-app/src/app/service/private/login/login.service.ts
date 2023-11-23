@@ -10,20 +10,20 @@ import { ManageLocalData } from 'src/app/utils/manage.localdata';
 })
 export class LoginService {
 
-  private readonly urlLogin = 'http://localhost:8080/api/private/sesion';
+  private readonly urlLogin = 'http://localhost:8080/api/auth/login';
 
   constructor(
     private http: HttpClient,
     private router: Router,
   ) { }
 
-  public loginUser(userModel: UserModel): Observable<any[]> {
-    return this.http.post<any[]>(this.urlLogin, userModel);
+  public loginUser(userModel: UserModel): Observable<UserModel> {
+    return this.http.post<UserModel>(this.urlLogin, userModel);
   }
   
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
     const userData = ManageLocalData.getLocalData();
-    if(userData.emailUser != undefined) {
+    if(userData.emailClient != undefined) {
       return true;
     }
     this.router.navigate(['/login']);
