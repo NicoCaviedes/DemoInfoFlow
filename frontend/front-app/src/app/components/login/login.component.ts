@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Router, RouterModule } from '@angular/router';
 import { UserModel } from 'src/app/models/user/user.model';
-import { LoginService } from 'src/app/service/login/login.service';
+import { LoginService } from 'src/app/service/private/login/login.service';
 import { FormsModule } from '@angular/forms';
 import { ManageLocalData } from 'src/app/utils/manage.localdata';
 import { NavbarComponent } from 'src/app/base/navbar/navbar.component';
@@ -42,21 +42,21 @@ export class LoginComponent implements OnInit{
 
   public loginUser(): void {
     const userForm: UserModel = {
-      idUser: 0,
-      emailUser: this.emailForm,
-      passwordUser: this.passwordForm,
-      passConfUser: '',
+      idClient: 0,
+      firstNameClient:'',
+      lastNameClient:'',
+      emailClient: this.emailForm,
+      passwordClient: this.passwordForm,
+      tokenAuthClient: '',
       idComercio: 0
     };
 
     this.loginService.loginUser(userForm).subscribe(result => {
-      if(result[1] != null){
-        console.log(result[0])
-        ManageLocalData.saveLoginLocalData(result[1]!);
-        this.router.navigate(['/dashboard'], {state: {userData: result[1]}})
-        console.log('Guardamos info y fuimos redirec')
+      if(result != null){
+        ManageLocalData.saveLoginLocalData(result);
+        this.router.navigate(['/dashboard'], {state: {userData: result}})
       } else {
-        this.openSnackBar(result[0]);
+        this.openSnackBar("Error, no se ha encontrado el usuario");
       }
     });
   }

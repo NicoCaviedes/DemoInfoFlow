@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../../base/navbar/navbar.component";
 import { FooterComponent } from "../../base/footer/footer.component";
 import { ProductModel } from 'src/app/models/product/product.model';
-import { ProductService } from 'src/app/service/products/product.service';
+import { ProductService } from 'src/app/service/public/products/product.service';
 import { FormsModule } from '@angular/forms';
 import { InventoryModel } from 'src/app/models/inventory/inventory.model';
 import { UserModel } from 'src/app/models/user/user.model';
 import { ManageLocalData } from 'src/app/utils/manage.localdata';
-import { InventoryService } from 'src/app/service/inventory/inventory.service';
+import { InventoryService } from 'src/app/service/private/inventory/inventory.service';
 import { Router } from '@angular/router';
 
 @Component({

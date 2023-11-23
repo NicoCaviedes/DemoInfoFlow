@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ProductModel } from '../../models/product/product.model';
+import { ProductModel } from '../../../models/product/product.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,9 +20,5 @@ export class ProductService {
 
   getProduct(idProduct: number): Observable<ProductModel> {
     return this.http.get<ProductModel>(`${this.urlAPIPublic}/${idProduct}`);
-  }
-
-  saveProduct(idProduct: number){
-    return this.http.post<ProductModel>(this.urlAPIPublic, idProduct)
   }
 }
