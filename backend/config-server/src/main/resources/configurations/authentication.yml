@@ -1,7 +1,7 @@
 server:
   port: 8098
   servlet:
-    context-path: /api/priv/auth
+    context-path: /api/auth
 
 eureka:
   instance:

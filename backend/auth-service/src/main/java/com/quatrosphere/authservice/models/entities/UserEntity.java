@@ -1,26 +1,33 @@
 package com.quatrosphere.authservice.models.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "cliente")
-@Data
-@Builder
+@Table(name = "client")
+@Data @Builder @NoArgsConstructor @AllArgsConstructor
 public class UserEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cliente")
-    private long idCliente;
+    @Column(name = "id_client")
+    private long idClient;
 
-    @Column(name = "email_cliente")
-    private String email;
+    @Column(name = "firstname_client")
+    private String firstNameClient;
+
+    @Column(name = "lastname_client")
+    private String lastNameClient;
+    
+    @Column(name = "email_client")
+    private String emailClient;
 
     @Column(name = "password_cliente")
-    private String password;
+    private String passwordClient;
 
     @Column(name = "token_auth")
-    private String tokenAuth;
+    private String tokenAuthClient;
 }
