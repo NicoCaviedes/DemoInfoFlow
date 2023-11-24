@@ -1,7 +1,9 @@
 export interface UserModel {
-    idUser: number;
-    emailUser: string;
-    passwordUser: string;
-    passConfUser: string;
-    idComercio: number;
+    idClient: number;
+    firstNameClient: string;
+    lastNameClient: string;
+    emailClient: string;
+    passwordClient: string;
+    tokenAuthClient: string;
+    idCompany: number;
 }
