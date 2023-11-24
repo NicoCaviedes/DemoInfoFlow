@@ -15,6 +15,7 @@ import lombok.ToString;
 public class DetailSaleEntity extends BaseEntity{
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_detalle")
     private long idDetalle;
 

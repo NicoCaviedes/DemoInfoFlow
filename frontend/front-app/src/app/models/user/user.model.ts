@@ -5,5 +5,5 @@ export interface UserModel {
     emailClient: string;
     passwordClient: string;
     tokenAuthClient: string;
-    idComercio: number;
+    idCompany: number;
 }

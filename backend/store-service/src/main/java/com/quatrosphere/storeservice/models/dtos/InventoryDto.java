@@ -19,7 +19,7 @@ public class InventoryDto {
     private String tipoProducto;
     private int pesoNeto;
     private String unidadPesoNeto;
-    private long idEmpresa;
+    private long idCompany;
     private List<DetailSaleEntity> listDetailsSales;
 
 }

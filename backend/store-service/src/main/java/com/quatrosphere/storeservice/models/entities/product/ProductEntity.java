@@ -14,7 +14,7 @@ import lombok.ToString;
 public class ProductEntity extends BaseEntity{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
     private long idProducto;
 
@@ -39,17 +39,4 @@ public class ProductEntity extends BaseEntity{
     @Column(name = "desripcion_producto")
     private String descProducto;
 
-    // @Override
-    // public ProductModelDto transferToDto(){
-    //     ProductModelDto productTrf = new ProductModelDto();
-    //     productTrf.setIdProducto(this.idProducto);
-    //     productTrf.setNombreProducto(this.nombreProducto);
-    //     productTrf.setNombreProveedor(this.nombreProveedor);
-    //     productTrf.setCodigoBarra(this.codigoBarra);
-    //     productTrf.setTipoProducto(this.tipoProducto);
-    //     productTrf.setPesoNeto(this.pesoNeto);
-    //     productTrf.setUnidadPesoNeto(this.unidadPesoNeto);
-    //     productTrf.setDescProducto(this.descProducto);
-    //     return productTrf;
-    // }
 }
