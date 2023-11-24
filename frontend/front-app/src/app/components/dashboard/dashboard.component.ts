@@ -13,7 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { ProductModel } from 'src/app/models/product/product.model';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
-import { ProductService } from 'src/app/service/products/product.service';
+import { ProductService } from 'src/app/service/public/products/product.service';
 
 @Component({
     selector: 'app-dashboard',
