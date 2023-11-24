@@ -12,5 +12,6 @@ public class UserDto {
     private String emailClient;
     private String passwordClient;
     private String tokenAuthClient;
+    private long idCompany;
     
 }

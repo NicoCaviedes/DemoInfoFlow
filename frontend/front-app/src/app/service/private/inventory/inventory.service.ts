@@ -21,7 +21,7 @@ export class InventoryService {
         'Authorization': 'Bearer '+localData.tokenAuthClient
       })
     }
-    return this.http.get<InventoryModel[]>(this.urlBase+'/'+localData.idComercio, httpOptions);
+    return this.http.get<InventoryModel[]>(this.urlBase+'/'+localData.idCompany, httpOptions);
   }
 
   saveInventory(product: InventoryModel){

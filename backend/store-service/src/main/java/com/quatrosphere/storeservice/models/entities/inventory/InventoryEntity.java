@@ -11,12 +11,13 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Entity
-@Table(name = "inventario_comercios")
+@Table(name = "inventory_store")
 @Data @ToString
 @EqualsAndHashCode(callSuper = false)
 public class InventoryEntity extends BaseEntity{
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_inv")
     private long idInv;
 
@@ -29,41 +30,25 @@ public class InventoryEntity extends BaseEntity{
     @Column(name = "id_prod")
     private long idProd;
 
-    @Column(name = "nombre_producto")
+    @Column(name = "product_name")
     private String nombreProd;
 
-    @Column(name = "codigo_barra")
+    @Column(name = "barcode")
     private long codigoBarra;
 
-    @Column(name = "tipo_producto")
+    @Column(name = "product_type")
     private String tipoProducto;
 
-    @Column(name = "peso_neto")
+    @Column(name = "net_weight")
     private int pesoNeto;
 
-    @Column(name = "unidad_peso_neto")
+    @Column(name = "net_weight_unit")
     private String unidadPesoNeto;
 
-    @Column(name = "id_empresa")
-    private long idEmpresa;
+    @Column(name = "id_Company")
+    private long idCompany;
 
     @OneToMany(mappedBy = "inventoryProduct")
     private List<DetailSaleEntity> listDetailsSales;
 
-    // @Override
-    // public InventoryModelDto transferToDto(){
-    //     InventoryModelDto invTrf = new InventoryModelDto();
-
-    //     invTrf.setIdInv(this.idInv);
-    //     invTrf.setQuantityProds(this.quantityProds);
-    //     invTrf.setUnitPriceProd(this.unitPriceProd);
-    //     invTrf.setIdProd(this.idProd);
-    //     invTrf.setNombreProd(this.nombreProd);
-    //     invTrf.setCodigoBarra(this.codigoBarra);
-    //     invTrf.setTipoProducto(this.tipoProducto);
-    //     invTrf.setPesoNeto(this.pesoNeto);
-    //     invTrf.setUnidadPesoNeto(this.unidadPesoNeto);
-    //     invTrf.setIdEmpresa(this.idEmpresa);
-    //     return invTrf;
-    // }
 }

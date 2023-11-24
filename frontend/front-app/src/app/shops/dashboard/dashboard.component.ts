@@ -43,7 +43,7 @@ export class DashboardComponent {
     const newProduct: InventoryModel = {
       idProd: this.product.idProducto,
       nombreProd: this.product.nombreProducto,
-      idEmpresa: this.userData.idComercio,
+      idCompany: this.userData.idCompany,
       codigoBarra: this.product.codigoBarra,
       tipoProducto: this.product.tipoProducto,
       quantityProds: this.cantidadTmp,

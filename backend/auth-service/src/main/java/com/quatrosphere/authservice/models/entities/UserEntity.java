@@ -25,9 +25,13 @@ public class UserEntity {
     @Column(name = "email_client")
     private String emailClient;
 
-    @Column(name = "password_cliente")
+    @Column(name = "password_client")
     private String passwordClient;
 
     @Column(name = "token_auth")
     private String tokenAuthClient;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_company")
+    private CompanyEntity company;
 }

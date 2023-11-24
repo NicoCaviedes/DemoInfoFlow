@@ -17,6 +17,7 @@ import lombok.ToString;
 public class SaleEntity extends BaseEntity{
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_sale")
     private long idSale;
 
@@ -29,15 +30,4 @@ public class SaleEntity extends BaseEntity{
     @OneToMany(mappedBy = "saleHeader")
     private List<DetailSaleEntity> detailSale;
 
-    // @Override
-    // public DetailSaleModelDto transferToDto(){
-    //     DetailSaleModelDto detailTrf = new DetailSaleModelDto();
-
-    //     detailTrf.setQuantityProds(this.quantityProds);
-    //     detailTrf.setTotalPrice(this.totalPrice);
-    //     detailTrf.setInventoryProduct(inventoryProduct.transferToDto());
-    //     detailTrf.setSaleHeader(this.saleHeader.transferToDto());
-
-    //     return detailTrf;
-    // }
 }

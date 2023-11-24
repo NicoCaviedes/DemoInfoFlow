@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit{
       emailClient: this.emailForm,
       passwordClient: this.passwordForm,
       tokenAuthClient: '',
-      idComercio: 0
+      idCompany: 0
     };
 
     this.loginService.loginUser(userForm).subscribe(result => {
