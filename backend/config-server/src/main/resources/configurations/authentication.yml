@@ -1,0 +1,27 @@
+server:
+  port: 8098
+  servlet:
+    context-path: /api/auth
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8083/eureka/
+
+spring:
+  application:
+    name: authentication
+  datasource:
+    url: jdbc:mysql://localhost:3308/authentication_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: auth-microservice
+    password: auTh-m1sv3_Db
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect

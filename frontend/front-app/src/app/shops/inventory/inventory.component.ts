@@ -11,10 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
-import { InventoryService } from 'src/app/service/inventory/inventory.service';
+import { InventoryService } from 'src/app/service/private/inventory/inventory.service';
 import { InventoryModel } from 'src/app/models/inventory/inventory.model';
-import { UserModel } from 'src/app/models/user/user.model';
-import { ManageLocalData } from 'src/app/utils/manage.localdata';
 
 @Component({
   selector: 'app-inventory',
@@ -28,16 +26,17 @@ import { ManageLocalData } from 'src/app/utils/manage.localdata';
 })
 export class InventoryComponent implements OnInit{
   
-  displayedColumns: string[] = ['ID Producto','Nombre Producto','ID Proveedor','Codigo Barra','Tipo Producto','Cantidad','Precio Unitario', 'Peso Neto','Unidad peso neto'];
+  displayedColumns: string[] = ['ID Producto','Nombre Producto','Codigo Barra','Tipo Producto','Cantidad','Precio Unitario', 'Peso Neto','Unidad peso neto'];
   
   listProducts!: InventoryModel[];
   flagQueue: boolean = false;
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.getInventory();
   }
 
   constructor(private inventoryService: InventoryService){
-    this.getInventory();
+    // this.getInventory();
   }
 
   getInventory(){
