@@ -114,9 +114,9 @@ INSERT INTO store_db.inventory_store(id_inv, quantity_prods, unit_price_prod, id
 
 INSERT INTO authentication_db.company(id_company, rut_company, name_company, direction_company, phone_company) VALUES (1, '18.221.431-5', 'QuatroSphere', 'Avenida siempre viva 123', 967453291);
 
-INSERT INTO authentication_db.client(id_client, email_client, firstname_client, lastname_client, id_company, password_client) VALUES (1, 'Nicolas', 'Caviedes', 'ni.caviedes@duocuc.cl', 1, '$2a$10$Zq4AAp1FSEMIwb6blVO8bOWjEow9pPvSdAQhTDZrwd6c9IkGbhFOW');
-INSERT INTO authentication_db.client(id_client, email_client, firstname_client, lastname_client, id_company, password_client) VALUES (2, 'David', 'Rubio', 'dav.rubio@duocuc.cl', 1, '$2a$10$Zq4AAp1FSEMIwb6blVO8bOWjEow9pPvSdAQhTDZrwd6c9IkGbhFOW');
-INSERT INTO authentication_db.client(id_client, email_client, firstname_client, lastname_client, password_client) VALUES (3, 'Sergio', 'Plaza', 's.plazae@duocuc.cl', '$2a$10$Zq4AAp1FSEMIwb6blVO8bOWjEow9pPvSdAQhTDZrwd6c9IkGbhFOW');
-INSERT INTO authentication_db.client(id_client, email_client, firstname_client, lastname_client, password_client) VALUES (4, 'Jorge', 'Escobar', 'j.escobar@duocuc.cl', '$2a$10$Zq4AAp1FSEMIwb6blVO8bOWjEow9pPvSdAQhTDZrwd6c9IkGbhFOW');
+INSERT INTO authentication_db.client(id_client, firstname_client, lastname_client, email_client, id_company, password_client) VALUES (1, 'Nicolas', 'Caviedes', 'ni.caviedes@duocuc.cl', 1, '$2a$10$Zq4AAp1FSEMIwb6blVO8bOWjEow9pPvSdAQhTDZrwd6c9IkGbhFOW');
+INSERT INTO authentication_db.client(id_client, firstname_client, lastname_client, email_client, id_company, password_client) VALUES (2, 'David', 'Rubio', 'dav.rubio@duocuc.cl', 1, '$2a$10$Zq4AAp1FSEMIwb6blVO8bOWjEow9pPvSdAQhTDZrwd6c9IkGbhFOW');
+INSERT INTO authentication_db.client(id_client, firstname_client, lastname_client, email_client, password_client) VALUES (3, 'Sergio', 'Plaza', 's.plazae@duocuc.cl', '$2a$10$Zq4AAp1FSEMIwb6blVO8bOWjEow9pPvSdAQhTDZrwd6c9IkGbhFOW');
+INSERT INTO authentication_db.client(id_client, firstname_client, lastname_client, email_client, password_client) VALUES (4, 'Jorge', 'Escobar', 'j.escobar@duocuc.cl', '$2a$10$Zq4AAp1FSEMIwb6blVO8bOWjEow9pPvSdAQhTDZrwd6c9IkGbhFOW');
 
 COMMIT;

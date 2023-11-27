@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { InventoryModel } from 'src/app/models/inventory/inventory.model';
 import { ManageLocalData } from 'src/app/utils/manage.localdata';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
@@ -12,7 +13,8 @@ export class InventoryService {
 
   constructor(private http: HttpClient,) { }
 
-  readonly urlBase = 'http://localhost:8080/api/priv/store/inventory';
+  // readonly urlBase = '/api/priv/store/inventory';
+  readonly urlBase = `${environment.baseApiURL}/api/priv/store/inventory`;
 
   getInventory(): Observable<InventoryModel[]>{
     const localData = ManageLocalData.getLocalData();

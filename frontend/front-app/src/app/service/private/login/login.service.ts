@@ -4,13 +4,14 @@ import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot } fr
 import { Observable } from 'rxjs';
 import { UserModel } from 'src/app/models/user/user.model';
 import { ManageLocalData } from 'src/app/utils/manage.localdata';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private readonly urlLogin = 'http://localhost:8080/api/auth/login';
+  private readonly urlLogin = `${environment.baseApiURL}/api/auth/login`;
 
   constructor(
     private http: HttpClient,
@@ -18,7 +19,11 @@ export class LoginService {
   ) { }
 
   public loginUser(userModel: UserModel): Observable<UserModel> {
-    return this.http.post<UserModel>(this.urlLogin, userModel);
+    const clientLogin = {
+      emailClient:userModel.emailClient,
+      passwordClient:userModel.passwordClient
+    }
+    return this.http.post<UserModel>(this.urlLogin, clientLogin);
   }
   
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{

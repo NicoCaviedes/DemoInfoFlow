@@ -6,8 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "company")
-@Data @Builder
-@EqualsAndHashCode(callSuper = false)
+@Data @Builder @NoArgsConstructor @AllArgsConstructor
 public class CompanyEntity {
     
     @Id

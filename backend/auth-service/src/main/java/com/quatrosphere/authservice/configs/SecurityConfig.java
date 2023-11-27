@@ -21,6 +21,7 @@ public class SecurityConfig {
                 request.requestMatchers(HttpMethod.GET, "/actuator").permitAll();
                 request.requestMatchers(HttpMethod.POST, "/login", "/register").permitAll();
                 request.requestMatchers(HttpMethod.PUT, "/login", "/register").permitAll();
+                request.requestMatchers(HttpMethod.OPTIONS, "/login", "/register").permitAll();
                 request.anyRequest().authenticated();
             });
 

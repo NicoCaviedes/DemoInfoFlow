@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductModel } from 'src/app/models/product/product.model';
 import { ManageLocalData } from 'src/app/utils/manage.localdata';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  readonly urlAPIPrivate = 'http://localhost:8080/api/priv/store/products';
+  readonly urlAPIPrivate = `${environment.baseApiURL}/api/priv/store/products`;
 
   constructor(private http: HttpClient,) { }
 

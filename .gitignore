@@ -28,7 +28,6 @@ replay_pid*
 
 
 # Compiled output
-/dist
 /tmp
 /out-tsc
 /bazel-out
@@ -103,7 +102,6 @@ out/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
-/dist/
 /nbdist/
 /.nb-gradle/
 
@@ -111,4 +109,4 @@ out/
 .vscode/
 
 ### Config Local ###
-init-app/
+init-app/jdk*
